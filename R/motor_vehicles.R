@@ -53,6 +53,6 @@ new_vehicles <- rjstat::fromJSONstat(json_data)
 new_vehicles$date <- lubridate::ym(new_vehicles$Month)
 # new_vehicles$date <- format(lubridate::ym(new_vehicles$Month), "%d/%m/%Y")
 new_vehicles <- subset(new_vehicles, select = c(date, value))
-write.csv(new_vehicles, "new_vehicles.csv", row.names = FALSE)
+write.csv(new_vehicles, "data/new_vehicles.csv", row.names = FALSE)
 
-openxlsx::write.xlsx(new_vehicles, "new_vehicles.xlsx")
+openxlsx::write.xlsx(new_vehicles, "data/new_vehicles.xlsx")
